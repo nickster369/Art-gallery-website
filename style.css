@@ -1,11 +1,10 @@
 html, body, .bodyContainer {
   margin: 0;
   padding: 0;
-  font-family: arial, sans-serif;
+
 }
 
 body {
-  height: 100vh;
   justify-content: center;
   display: flex;
   align-items: center;
@@ -13,8 +12,249 @@ body {
 }
 
 .bodyContainer {
-  width: 320px;
-  height: 497px;
+  width: 100vw;
   background-color: white;
   border-radius: 20px;
+}
+
+.topContainer {
+  display: flex;
+  flex-grow: 1;
+}
+
+
+.topBox1 {
+  background-color: black;
+  width: 100%;
+
+}
+
+.topBox1 > h1 {
+  color: white;
+  position: relative;
+  top: 25%;
+  left: 66%;
+  display: block;
+  font-family: "Big Shoulders Display", serif;
+  font-size: 96px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 88px;
+  text-transform: uppercase;
+
+}
+
+.half-color::after {
+  content: ""; /* Create an empty element for the background */
+  position: absolute;
+  top: 0;
+  left: 65%;
+  width: 60%; /* Set the width to color only half of the letter */
+  height: 100%;
+  background: linear-gradient(to right, black 50%, transparent 50%); /* Set the linear gradient for coloring */
+  z-index: 0; /* Put the background behind the text */
+}
+
+.half-color {
+  position: relative;
+  display: inline-block;
+}
+
+.half-color::before {
+  content: attr(data-text); /* Show the original text content */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1; /* Put the text in front */
+}
+
+#letterLERY {
+  color: black;
+}
+
+.topBox2 {
+  width: 100%;
+
+}
+
+.topBox2 > img {
+  width: 100%;
+  height: 100%;
+}
+
+.topBox3 {
+  width: 100%;
+
+}
+
+.introWithButton {
+  width: 350px;
+  position: relative;
+  display: inline-block;
+  top: 25%;
+  right: 15%;
+
+}
+
+.topBox3 > h1 {
+  opacity: 0;
+  margin: 0;
+}
+
+.introWithButton > p {
+  font-family: Outfit, serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px; /* 145.455% */
+  margin: 52px 0
+}
+
+.introWithButton > button {
+  width: 204px;
+  height: 72px;
+  position: relative; /* Ensure button remains on top of pseudo-element */
+  z-index: 1;
+  border: none;
+  background-color: #151515;
+}
+
+button > span {
+  font-family: "Big Shoulders Display", serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  letter-spacing: 4px;
+  color: #FFF;
+}
+
+.introWithButton > button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 56px;
+  height: 72px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="56" height="72" viewBox="0 0 56 72" fill="none"><rect width="56" height="72" fill="%23D5966C"/><path d="M24 24L32 36L24 48" stroke="white"/></svg>');
+  background-size: cover;
+  z-index: -1;
+}
+
+#tabletTitle {
+  display: none;
+}
+
+.bottomContainer {
+  padding: 165px;
+
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 20px;
+  padding: 20px;
+}
+
+.bottomBox {
+  background-color: #3498db;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  border-radius: 5px;
+
+}
+
+
+#bottomBox1 {
+  grid-column: 1;
+  grid-row: 1;
+
+}
+
+#bottomBox2 {
+  grid-column: 2 / 4;
+  grid-row: 1;
+
+
+}
+
+#bottomBox2 > img {
+  width: 100%;
+}
+
+#bottomBox3 {
+  grid-column: 1 / 3;
+  grid-row: 2 / 4;
+
+}
+
+#bottomBox3 > img {
+  width: 100%;
+
+}
+
+#bottomBox4 {
+  grid-column: 3 / 3;
+  grid-row: 2;
+  height: min-content;
+}
+
+#bottomBox4 > img {
+  width: 100%;
+
+}
+
+#bottomBox5 {
+  grid-column: 3;
+  grid-row: 3 / 3;
+  height: min-content;
+}
+
+/*Multiple image sizes*/
+/*<img*/
+/* srcset="elva-fairy-480w.jpg 480w, elva-fairy-800w.jpg 800w"*/
+/*sizes="(max-width: 600px) 480px,*/
+/*800px"*/
+/*src="elva-fairy-800w.jpg"*/
+/*alt="Elva dressed as a fairy" />*/
+
+/* Desktop: 1080px to 1440px*/
+@media only screen and (min-width: 2560px) and (min-height: 1440px) {
+  .topBox1 > h1 {
+    font-size: 129px;
+    line-height: 120px;
+  }
+
+  button > span {
+    font-size: 25px;
+  }
+
+  .introWithButton > button {
+    width: 254px;
+    height: 72px;
+  }
+
+  .introWithButton > p {
+    font-size: 28px;
+  }
+}
+
+/* Tablets: 768px to 1024px */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .topBox1 {
+    display: none;
+  }
+
+  #tabletTitle {
+    display: block;
+    color: #151515;
+    font-family: "Big Shoulders Display", serif;
+    font-size: 70px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 65px; /* 92.857% */
+    text-transform: uppercase;
+  }
 }
