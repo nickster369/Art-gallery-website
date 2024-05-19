@@ -1,7 +1,6 @@
 html, body, .bodyContainer {
   margin: 0;
   padding: 0;
-
 }
 
 body {
@@ -9,10 +8,11 @@ body {
   display: flex;
   align-items: center;
   background-color: grey;
+  width: 100%;
 }
 
 .bodyContainer {
-  width: 100vw;
+  width: 100%;
   background-color: white;
   border-radius: 20px;
 }
@@ -33,7 +33,7 @@ body {
   color: white;
   position: relative;
   top: 25%;
-  left: 66%;
+  left: 55%;
   display: block;
   font-family: "Big Shoulders Display", serif;
   font-size: 96px;
@@ -41,7 +41,6 @@ body {
   font-weight: 900;
   line-height: 88px;
   text-transform: uppercase;
-
 }
 
 .half-color::after {
@@ -96,10 +95,6 @@ body {
 
 }
 
-.topBox3 > h1 {
-  opacity: 0;
-  margin: 0;
-}
 
 .introWithButton > p {
   font-family: Outfit, serif;
@@ -147,85 +142,91 @@ button > span {
 
 .bottomContainer {
   padding: 165px;
-
 }
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: 0px 0px;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  gap: 30px 30px;
   grid-template-areas:
-    "top-left top-right top-right"
-    "bottom-left bottom-left top-bottom-right"
-    "bottom-left bottom-left bottom-bottom-right";
-
+    "top-left top-right top-right "
+    "bottom-left bottom-left bottom-right"
+    "bottom-left bottom-left bottom-right";
+  width: 1110px;
+  height: 1150px;
+  margin: 0 auto;
 }
 
 .top-right {
   grid-area: top-right;
 }
 
+.top-right > img {
+  width: 100%;
+}
+
 .top-left {
   grid-area: top-left;
 }
 
-.bottom-left {
-  grid-area: bottom-left;
-
+#top-left-content {
+  padding-top: 50px;
 }
 
-.top-bottom-right {
-  grid-area: top-bottom-right;
-  height: auto;
-}
-
-.bottom-bottom-right {
-  grid-area: bottom-bottom-right;
-  background-color: black;
-}
-
-.top-left > h2 {
+#top-left-content > h2 {
   color: #151515;
   font-family: "Big Shoulders Display", serif;
   font-size: 60px;
   font-style: normal;
   font-weight: 900;
-  line-height: 60px; /* 100% */
+  line-height: 60px;
   text-transform: uppercase;
   margin: 32px 0;
 }
 
-.top-left > p {
+#top-left-content > p {
   font-family: Outfit, serif;
   color: #444;
   font-size: 22px;
   font-style: normal;
   font-weight: 400;
-  line-height: 32px; /* 145.455% */
+  line-height: 32px;
 }
 
-
-.top-right > img {
-  width: 100%;
+.bottom-left {
+  grid-area: bottom-left;
 }
-
 
 .bottom-left > img {
   width: 100%;
 
 }
 
+.bottom-right {
+  grid-area: bottom-right;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+
 .top-bottom-right > img {
   width: 100%;
+
 }
 
 .bottom-bottom-right {
-  width: 100%;
+  background-color: black;
+  height: 100%;
 
 }
 
-.bottom-bottom-right > h2 {
+#bottom-bottom-right-content {
+  padding-left: 48px;
+}
+
+#bottom-bottom-right-content > h2 {
   font-family: "Big Shoulders Display", serif;
   font-size: 60px;
   font-style: normal;
@@ -236,7 +237,7 @@ button > span {
 
 }
 
-.bottom-bottom-right > p {
+#bottom-bottom-right-content > p {
   font-family: Outfit, serif;
   font-size: 22px;
   font-style: normal;
@@ -245,20 +246,55 @@ button > span {
   color: #FFF;
 }
 
+footer {
+  background-color: #151515;
+  height: 244px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 
-/*Multiple image sizes*/
-/*<img*/
-/* srcset="elva-fairy-480w.jpg 480w, elva-fairy-800w.jpg 800w"*/
-/*sizes="(max-width: 600px) 480px,*/
-/*800px"*/
-/*src="elva-fairy-800w.jpg"*/
-/*alt="Elva dressed as a fairy" />*/
+.footerContainer {
+  display: flex;
+  align-items: center;
+  gap: 500px;
+}
 
-/* Desktop: 1080px to 1440px*/
-@media only screen and (min-width: 2560px) and (min-height: 1440px) {
+#footerLogo {
+  width: 159px;
+  height: 58px;
+}
+
+svg {
+  padding-right: 12px;
+}
+
+#footerEnder > p {
+  font-family: Outfit, serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 155.556% */
+  color: #FFF;
+  width: 430px;
+  height: 84px;
+}
+
+.hiddenImageTablet {
+  display: none;
+}
+
+.hiddenImageMobile {
+  display: none;
+}
+
+
+/* Desktops: 1440px*/
+@media only screen and (min-width: 2000px) and (max-width: 2560px) {
   .topBox1 > h1 {
-    font-size: 129px;
+    font-size: 128px;
     line-height: 120px;
+    left: 55%;
   }
 
   button > span {
@@ -271,12 +307,48 @@ button > span {
   }
 
   .introWithButton > p {
-    font-size: 28px;
+    font-size: 24px;
+  }
+
+  #footerEnder > p {
+    font-size: 20px;
+  }
+
+  .footerContainer {
+    gap: 800px;
   }
 }
 
-/* Tablets: 768px to 1024px */
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
+/* Desktops: 1050px*/
+@media only screen and (min-width: 1050px) and (max-width: 1680px) {
+  .footerContainer {
+    gap: 300px;
+  }
+
+  .topBox1 > h1 {
+    left: 48%;
+  }
+}
+
+/* Laptops: 900px*/
+@media only screen and (min-width: 900px) and (max-width: 1440px) {
+  .topBox1 > h1 {
+    left: 39%;
+  }
+
+  .footerContainer {
+    gap: 300px;
+  }
+
+  #footerEnder > p {
+    font-size: 16px;
+    width: 281px;
+  }
+}
+
+
+/* Tablets: 768px */
+@media only screen and (min-width: 1024px) and (max-width: 1400px) {
   .topBox1 {
     display: none;
   }
@@ -290,5 +362,85 @@ button > span {
     font-weight: 900;
     line-height: 65px; /* 92.857% */
     text-transform: uppercase;
+  }
+
+  .grid {
+    gap: 11px 11px;
+    width: 689px;
+    height: 1131px;
+  }
+
+  #top-left-content {
+    padding-top: 0;
+  }
+
+  #top-left-content > h2 {
+    font-size: 50px;
+    line-height: 45px;
+  }
+
+  #top-left-content > p {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  #bottom-bottom-right-content {
+    padding-left: 29px;
+    padding-top: 45px;
+  }
+
+  #bottom-bottom-right-content > h2 {
+    font-size: 50px;
+    color: #FFF;
+    line-height: 45px;
+    width: 223px;
+  }
+
+  .bottom-left {
+    width: 398px;
+    height: 720px;
+  }
+
+  .bottom-right {
+    gap: 11px;
+  }
+
+  .bottom-bottom-right {
+    width: 280px;
+    height: 396px;
+    background-color: #151515;
+
+  }
+
+  #bottom-bottom-right-content > p {
+    font-size: 18px;
+    line-height: 28px;
+
+  }
+
+  footer {
+    height: 216px;
+  }
+
+  .footerContainer {
+    gap: 200px;
+  }
+
+  #footerLogo {
+    width: 110px;
+    height: 40px;
+  }
+
+  .hiddenImageTablet {
+    display: block;
+  }
+
+  .hiddenImageDesktop {
+    display: none;
+  }
+
+  #footerEnder > p {
+    font-size: 16px;
+    width: 281px;
   }
 }
