@@ -47,8 +47,8 @@ body {
   content: ""; /* Create an empty element for the background */
   position: absolute;
   top: 0;
-  left: 65%;
-  width: 60%; /* Set the width to color only half of the letter */
+  left: 61%;
+  width: 65%; /* Set the width to color only half of the letter */
   height: 100%;
   background: linear-gradient(to right, black 50%, transparent 50%); /* Set the linear gradient for coloring */
   z-index: 0; /* Put the background behind the text */
@@ -83,7 +83,7 @@ body {
 
 .topBox3 {
   width: 100%;
-
+  height: 100vh;
 }
 
 .introWithButton {
@@ -297,6 +297,10 @@ svg {
     left: 55%;
   }
 
+  .topBox3 {
+    height: 100vh;
+  }
+
   button > span {
     font-size: 25px;
   }
@@ -325,6 +329,10 @@ svg {
     gap: 300px;
   }
 
+  .topBox3 {
+    height: 100vh;
+  }
+
   .topBox1 > h1 {
     left: 48%;
   }
@@ -334,6 +342,12 @@ svg {
 @media only screen and (min-width: 900px) and (max-width: 1440px) {
   .topBox1 > h1 {
     left: 39%;
+  }
+
+  .topBox3 {
+    height: 100vh;
+
+
   }
 
   .footerContainer {
@@ -349,8 +363,22 @@ svg {
 
 /* Tablets: 768px */
 @media only screen and (min-width: 1024px) and (max-width: 1400px) {
+  .topContainer {
+    width: 46vw;
+  }
+
+  .topBox2 {
+
+  }
+
   .topBox1 {
     display: none;
+  }
+
+  .topBox3 {
+    width: 100%;
+    position: absolute;
+    left: 55%;
   }
 
   #tabletTitle {
@@ -358,6 +386,7 @@ svg {
     color: #151515;
     font-family: "Big Shoulders Display", serif;
     font-size: 70px;
+    width: 330px;
     font-style: normal;
     font-weight: 900;
     line-height: 65px; /* 92.857% */
@@ -435,6 +464,10 @@ svg {
     display: block;
   }
 
+  .hiddenImageMobile {
+    display: none;
+  }
+
   .hiddenImageDesktop {
     display: none;
   }
@@ -442,5 +475,59 @@ svg {
   #footerEnder > p {
     font-size: 16px;
     width: 281px;
+  }
+}
+
+
+/* Mobile: 375px */
+@media only screen and (min-width: 375px) and (max-width: 1020px) {
+  .topBox1 {
+    display: none;
+  }
+
+  .topContainer {
+    flex-direction: column;
+  }
+
+  #tabletTitle {
+    display: block;
+    color: #151515;
+    font-family: "Big Shoulders Display", serif;
+    font-size: 70px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 65px; /* 92.857% */
+    text-transform: uppercase;
+  }
+
+  .topBox2 {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .topBox2 > img {
+
+  }
+
+  .topBox3 {
+
+  }
+
+  .hiddenImageTablet {
+    display: none;
+
+  }
+
+  .hiddenImageMobile {
+    display: block;
+  }
+
+  .hiddenImageDesktop {
+    display: none;
+  }
+
+  .topBox2 > img {
+    width: 100%;
+    height: 50vh;
   }
 }
