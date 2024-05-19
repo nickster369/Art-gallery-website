@@ -152,22 +152,40 @@ button > span {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 20px;
-  padding: 20px;
-  width: auto;
-  height: 100%;
-  margin: 0 auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "top-left top-right top-right"
+    "bottom-left bottom-left top-bottom-right"
+    "bottom-left bottom-left bottom-bottom-right";
+
 }
 
-.bottomBox {
-  color: white;
-  text-align: center;
-  padding: 20px;
-  border-radius: 5px;
+.top-right {
+  grid-area: top-right;
 }
 
-#bottomBox1 > h2 {
+.top-left {
+  grid-area: top-left;
+}
+
+.bottom-left {
+  grid-area: bottom-left;
+
+}
+
+.top-bottom-right {
+  grid-area: top-bottom-right;
+  height: auto;
+}
+
+.bottom-bottom-right {
+  grid-area: bottom-bottom-right;
+  background-color: black;
+}
+
+.top-left > h2 {
   color: #151515;
   font-family: "Big Shoulders Display", serif;
   font-size: 60px;
@@ -178,7 +196,7 @@ button > span {
   margin: 32px 0;
 }
 
-#bottomBox1 > p {
+.top-left > p {
   font-family: Outfit, serif;
   color: #444;
   font-size: 22px;
@@ -187,55 +205,27 @@ button > span {
   line-height: 32px; /* 145.455% */
 }
 
-#bottomBox1 {
-  grid-column: 1;
-  grid-row: 1;
-  margin: auto 0;
 
-}
-
-#bottomBox2 {
-  grid-column: 2 / 4;
-  grid-row: 1 / 2;
+.top-right > img {
   width: 100%;
 }
 
-#bottomBox2 > img {
-  width: 100%;
-}
 
-#bottomBox3 {
-  grid-column: 1 / 3;
-  grid-row: 2;
-  height: 100%;
+.bottom-left > img {
   width: 100%;
 
 }
 
-#bottomBox3 > img {
-
-  width: 575px;
-  height: 826px;
-
-}
-
-#bottomBox4 {
+.top-bottom-right > img {
   width: 100%;
 }
 
-#bottomBox4 > img {
+.bottom-bottom-right {
   width: 100%;
+
 }
 
-#bottomBox5 {
-  width: 100%;
-  padding: 0 5px;
-  margin-left: 15px;
-  margin-bottom: 25px;
-  background-color: #151515;
-}
-
-#bottomBox5 > h2 {
+.bottom-bottom-right > h2 {
   font-family: "Big Shoulders Display", serif;
   font-size: 60px;
   font-style: normal;
@@ -246,22 +236,13 @@ button > span {
 
 }
 
-#bottomBox5 > p {
+.bottom-bottom-right > p {
   font-family: Outfit, serif;
   font-size: 22px;
   font-style: normal;
   font-weight: 400;
   line-height: 32px; /* 145.455% */
   color: #FFF;
-}
-
-.subBox {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  grid-column: 3;
-  grid-row: 2 / 3;
-
 }
 
 
