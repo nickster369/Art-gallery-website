@@ -501,18 +501,33 @@ svg {
   }
 
   .topBox2 {
-    height: 100vh;
+    height: 240px;
     width: 100vw;
   }
 
-  .topBox2 > img {
+.grid{
+  width: 343px;
+display: flex;
+  flex-direction: column;
 
-  }
+}
+
 
   .topBox3 {
+display: flex;
+    justify-content: center;
 
   }
-
+#tabletTitle{
+  font-size: 60px;
+  line-height: 55px; /* 91.667% */
+width: 343px;
+}
+.introWithButton > p{
+  font-size: 18px;
+  line-height: 28px; /* 155.556% */
+  width: 343px;
+}
   .hiddenImageTablet {
     display: none;
 
@@ -529,5 +544,9 @@ svg {
   .topBox2 > img {
     width: 100%;
     height: 50vh;
+  }
+  .bottomContainer {
+   display: flex;
+    padding: 0;
   }
 }
