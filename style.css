@@ -9,12 +9,14 @@ body {
   align-items: center;
   background-color: grey;
   width: 100%;
+
 }
 
 .bodyContainer {
   width: 100%;
   background-color: white;
-  border-radius: 20px;
+
+
 }
 
 .topContainer {
@@ -92,11 +94,10 @@ body {
   display: inline-block;
   top: 25%;
   right: 15%;
-
 }
 
 
-.introWithButton > p {
+.introWithButton > a > p {
   font-family: Outfit, serif;
   font-size: 22px;
   font-style: normal;
@@ -105,7 +106,7 @@ body {
   margin: 52px 0
 }
 
-.introWithButton > button {
+.introWithButton > a > button {
   width: 204px;
   height: 72px;
   position: relative; /* Ensure button remains on top of pseudo-element */
@@ -124,7 +125,7 @@ button > span {
   color: #FFF;
 }
 
-.introWithButton > button::after {
+.introWithButton > a > button::after {
   content: "";
   position: absolute;
   top: 0;
@@ -288,6 +289,126 @@ svg {
   display: none;
 }
 
+/*Page 2 Location*/
+
+.locationContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+}
+
+.ourLocationContainer {
+  background-color: #151515;
+  height: 548px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.map {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.map > img {
+  width: 100%;
+}
+
+
+#ourLocationTitle > h1 {
+  /* Heading (L) */
+  font-family: "Big Shoulders Display", serif;
+  font-size: 70px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 70px; /* 100% */
+  text-transform: uppercase;
+  width: 350px;
+  color: #FFF;
+
+}
+
+#ourLocationInfo > p {
+  /* Heading (L) */
+  /* Body (M) */
+  font-family: Outfit, serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px; /* 145.455% */
+  width: 445px;
+  color: #FFF;
+}
+
+#ourLocationInfo > h2 {
+  /* Heading (S) */
+  font-family: "Big Shoulders Display", serif;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 36px; /* 100% */
+  text-transform: uppercase;
+  color: #D5966C;
+}
+
+.ourLocation {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+
+}
+
+.endingContainer {
+  display: flex;
+  flex-direction: row;
+  background-color: #D5966C;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 244px;
+  flex-flow: wrap;
+
+}
+
+.ending > p {
+  font-family: Outfit, serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 155.556% */
+  width: 430px;
+}
+
+.backToHomeButton {
+  position: absolute;
+  width: 208px;
+  height: 72px;
+  left: 10%;
+}
+
+.backToHomeButton > button {
+  width: 204px;
+  height: 72px;
+  position: relative; /* Ensure button remains on top of pseudo-element */
+  z-index: 1;
+  border: none;
+  background-color: #151515;
+}
+
+.backToHomeButton > button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 100%;
+  width: 56px;
+  height: 72px;
+  rotate: 180deg;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="56" height="72" viewBox="0 0 56 72" fill="none"><rect width="56" height="72" fill="%23D5966C"/><path d="M24 24L32 36L24 48" stroke="white"/></svg>');
+  background-size: cover;
+  z-index: -1;
+}
 
 /* Desktops: 1440px*/
 @media only screen and (min-width: 2000px) and (max-width: 2560px) {
@@ -487,6 +608,7 @@ svg {
 
   .topContainer {
     flex-direction: column;
+
   }
 
   #tabletTitle {
@@ -498,36 +620,44 @@ svg {
     font-weight: 900;
     line-height: 65px; /* 92.857% */
     text-transform: uppercase;
+
   }
 
   .topBox2 {
     height: 240px;
-    width: 100vw;
+    width: 100%;
   }
 
-.grid{
-  width: 343px;
-display: flex;
-  flex-direction: column;
-
-}
+  .grid {
+    width: 343px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-bottom: 40px;
+  }
 
 
   .topBox3 {
-display: flex;
+    display: flex;
     justify-content: center;
+    height: 500px;
+    padding-left: 20px;
+
 
   }
-#tabletTitle{
-  font-size: 60px;
-  line-height: 55px; /* 91.667% */
-width: 343px;
-}
-.introWithButton > p{
-  font-size: 18px;
-  line-height: 28px; /* 155.556% */
-  width: 343px;
-}
+
+  #tabletTitle {
+    font-size: 60px;
+    line-height: 55px; /* 91.667% */
+    width: 343px;
+  }
+
+  .introWithButton > p {
+    font-size: 18px;
+    line-height: 28px; /* 155.556% */
+    width: 343px;
+  }
+
   .hiddenImageTablet {
     display: none;
 
@@ -535,6 +665,8 @@ width: 343px;
 
   .hiddenImageMobile {
     display: block;
+    width: 100%;
+    height: 100%;
   }
 
   .hiddenImageDesktop {
@@ -545,8 +677,28 @@ width: 343px;
     width: 100%;
     height: 50vh;
   }
+
   .bottomContainer {
-   display: flex;
+    height: 100%;
     padding: 0;
+
+  }
+
+  footer {
+    align-items: center;
+
+  }
+
+  .footerContainer {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  #ourLocationTitle > h1 {
+    width: 400px;
+  }
+
+  .ourLocation {
+    padding-bottom: 40px;
   }
 }
